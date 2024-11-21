@@ -13,6 +13,7 @@ Python 3.7 or later
 - os
 - re
 - argparse
+- time
 
 You can install the required libraries using pip:
 
