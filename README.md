@@ -17,7 +17,7 @@ Python 3.7 or later
 You can install the required libraries using pip:
 
 ```bash
-pip install requests os re argparse
+pip install requests os re argparse time
 ```
 
 # Usage
@@ -29,9 +29,9 @@ cd rinex-ppp-processor
 Run the script with the following command:
 
 ```bash
-python rinex_ppp_processor.py <rinex_file>
+python rinex_ppp_processor.py <rinex_file> <email>
 ```
-Replace <rinex_file> with the name of your RINEX file.
+Replace <rinex_file> with the name of your RINEX file and <email> with your email.
 
 ## The script will:
 - Upload the file to the IBGE PPP service.
@@ -40,5 +40,5 @@ Replace <rinex_file> with the name of your RINEX file.
 
 ## Example
 ```bash
-python rinex_ppp_processor.py example.21o test@example.com
+python rinex_ppp_processor.py example.24o example2.24o example3.24o test@example.com
 ```
