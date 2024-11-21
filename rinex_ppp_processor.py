@@ -21,7 +21,7 @@ def main(file_path,email):
         return
 
     # Debug: Print the cookies set by the site
-    print(f"Initial cookies: {session.cookies.get_dict()}")
+    print(f"Getting Session Data")
 
     headers = {
         "Host": "www.ibge.gov.br",
@@ -48,7 +48,6 @@ def main(file_path,email):
 
     # Print the response
     print(f"Status code: {response.status_code}")
-    print(f"Response text: {response.text}")
 
     pattern = r"onclick=\"window\.open\('([^']+)'"
     match = re.search(pattern, response.text)
@@ -56,9 +55,9 @@ def main(file_path,email):
 
     response = requests.get(download_link)
     if response.status_code == 200:
-        with open("download", 'wb') as f:
+        with open(f"{file_name}_ppp.zip", 'wb') as f:
             f.write(response.content)
-        print(f"File downloaded and saved as download")
+        print(f"File downloaded and saved as {file_name}_ppp.zip")
     else:
         print(f"Failed to download the file: {response.status_code}")
  
